@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PurchaseOrderNumber}}</title>
+    <style type="text/css">
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            color: #222;
+            line-height: 1.5rem;
+            mso-line-height-rule: exactly;
+            padding: 0 32px;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        @media print {
+
+            html,
+            body {
+                width: 210mm;
+                height: 297mm;
+            }
+        }
+
+        table {
+            border-collapse: collapse;
+            vertical-align: text-top;
+        }
+
+        address {
+            font-style: normal;
+        }
+
+        h4 {
+            margin-bottom: 0;
+        }
+
+        .break {
+            float: left;
+            line-height: 22px;
+        }
+
+        .numbered {
+            text-align: right;
+        }
+
+        h1 > small{
+            display: block;
+            clear: both;
+            font-size: 85%;
+            margin-bottom: 4px;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 0.25rem;
+            vertical-align: top;
+
+        }
+
+        .header{
+            background-color: rgb(223, 223, 223); padding: 8px auto; color: black;
+        }
+
+    </style>
+</head>
+
+<body>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center"
+        style="background-color: white; padding: 12px;border-radius: 0.25rem; margin: 12px auto 12px;">
+        <thead>
+            <tr style="vertical-align: top;">
+                <td style="padding: 8px;">
+                    <h1>
+                        <small class="display:block; clear:both;">Purchase Order</small>
+                        [[${poNumber}]]
+                    </h1>
+                </td>
+                <td style="padding: 8px;">
+                    <address>
+                        <h4>Corporate Address</h4>
+                        [[${officeName}]] [[${officeStreetAddress}]]<br>
+                        [[${officeCity}]]<br>
+                        [[${officeState}]]-[[${officePinCode}]]<br>
+                        [[${officeCountry}]]<br><br>
+                        <strong>Phone Number</strong> [[${{contactNumber}}]]<br>
+                        <strong>Email</strong> [[${{email}}]]
+                    </address>
+                </td>
+            </tr>
+            <tr class="header">
+                <td style="padding:16px;">[[${poNumber}]]</td>
+                <td class="numbered" style="padding:16px;">[[${poDate}]]</td>
+            </tr>
+            <tr>
+                <td style="margin:24px auto; border:1px inset #b9b9b9; padding: 16px;" width="50%">
+                    Issued to<br>
+                        <h4>[[${supplierName}]]</h4>
+                        [[${supplierStreetAddr}]], [[${supplierCity}]] - [[${supplierPinCode}]]<br>
+                        [[${supplierState}]], [[${supplierCountry}]]<br><br>
+                        <strong>Phone</strong> [[${supplierPhone}]]<br>
+                        <strong>GSTIN</strong> [[${supplierGstin}]]
+                </td>
+                <td style="margin:24px auto; border:1px solid #b9b9b9; padding: 16px;" width="50%">
+                    Issued by
+                    <h4>[[${buyerName}]]</h4>
+                    [[${buyerStreetAddr}]], [[${buyerCity}]] - [[${buyerPinCode}]]<br>
+                    [[${buyerState}]], [[${buyerCountry}]]<br><br>
+                    <strong>Phone</strong> [[${buyerPhone}]]<br>
+                    <strong>GSTIN</strong> [[${buyerGstin}]]
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2">
+                    <table style="width: 100%;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table style="width: 100%; margin: 24px auto;" class="header">
+                                        <tr>
+                                            <th style="width:5%; padding: 12px;">Sr.</th>
+                                            <th style="width:25%; padding: 12px;">Product Name</th>
+                                            <th style="width:20%; padding: 12px;" class="numbered">Quantity</th>
+                                            <th style="width: 20%; padding: 12px;" class="numbered">Rate ([[$currency]])</th>
+                                            <th style="width: 10%; padding: 12px;" class="numbered">Tax</th>
+                                            <th style="width: 20%; padding: 12px;" class="numbered">Amount</th>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table style="width: 100%; border-bottom:1px solid #d4d4d4">
+                                        <tr>
+                                            <td style="width:5%">1.</td>
+                                            <td style="width:25%">Some product name</td>
+                                            <td style="width:20%" class="numbered">10.00 Rolls</td>
+                                            <td style="width: 20%" class="numbered">10.00</td>
+                                            <td style="width: 10%" class="numbered">20.00</td>
+                                            <td style="width: 20%" class="numbered">120.00</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table style="width: 80%; text-align: left; border:1px solid #b9b9b9" border="1">
+                                        <tr class="header light">
+                                            <th style="width: 25%;">Tax Name</th>
+                                            <th style="width: 25%;">Tax Code</th>
+                                            <th style="width: 25%;" class="numbered">Rate</th>
+                                            <th style="width: 25%;" class="numbered">Amount</th>
+                                        </tr>
+                                        <tr>
+
+                                            <td style="width: 25%;">IGST</td>
+                                            <td style="width: 25%;">HSN: 98122211</td>
+                                            <td style="width: 25%;" class="numbered">20%</td>
+                                            <td style="width: 25%;" class="numbered">20.00</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="header light">
+                                <td colspan="5" class="numbered" style="padding:12px; font-size: 18px; font-style: bold;">
+                                    Total [[${poTotal}]]
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td style="width:20%; font-weight: bold; margin-bottom:10px;">Payment Terms</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="width:20%; font-weight: bold; margin-bottom:10px;">Delivery Terms</td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>
