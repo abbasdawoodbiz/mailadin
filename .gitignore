@@ -20,3 +20,6 @@ Thumbs.db
 *.launch
 .settings/
 *.sublime-workspace
+
+# Output
+email_output.html
