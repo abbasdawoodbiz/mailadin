@@ -1,0 +1,11 @@
+<tr>
+                    <td colspan="2" align="center">
+                        <img src="https://via.placeholder.com/400x300">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px 64px; text-align: center;" colspan="2">
+                        <strong style="display: block">Lorem ipsum dolor sit amet consectetur adipisicing elit.</strong>
+                        <p style="margin-top: 0">Omnis ipsa vitae illum eligendi impedit? Similique incidunt nam, quae itaque autem eligendi quas beatae facilis dolores doloremque harum atque. Beatae, obcaecati.</p>
+                    </td>
+                </tr>

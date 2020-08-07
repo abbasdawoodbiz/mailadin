@@ -1,0 +1,9 @@
+<tr>
+                    <td style="padding: 12px 8px 12px 32px; vertical-align: top;">
+                        <img src="https://via.placeholder.com/96">
+                    </td>
+                    <td style="padding: 12px 32px 12px 8px;">
+                        <strong style="display: block">Lorem ipsum dolor sit amet consectetur.</strong>
+                        <p style="margin-top: 0; font-size: 0.95rem;">Omnis ipsa vitae illum eligendi impedit? Similique incidunt nam, quae itaque autem eligendi quas beatae facilis dolores doloremque harum atque. Beatae, obcaecati.</p>
+                    </td>
+                </tr>

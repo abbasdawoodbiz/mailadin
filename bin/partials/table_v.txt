@@ -1,0 +1,64 @@
+<tr>
+                <td style="padding: 12px 32px">
+                    <table align="center" border="1" style="border:1px solid #EDEFF3; border-radius: 0.25rem"
+                        width="100%">
+                        <thead
+                            style="background-color: #F7F8FB; font-weight: bold; font-size: 0.85rem; text-transform: capitalize">
+                            <tr style="border:none">
+                                <td colspan="3" style="font-size: 0.8rem; padding: 12px">
+                                    Product ID: PO-987272-1
+                                    <span
+                                        style="clear:both; display:block; font-weight: normal; text-transform: capitalize; float:right">
+                                        Created on Oct 19, 2020
+                                    </span>
+                                </td>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 12px">
+                                    <strong style="font-size: 0.8rem; padding: 12px 0px">
+                                        Product Name
+                                        <span
+                                            style="clear:both; display:block; font-weight: normal; text-transform: capitalize; font-size:1.2rem">
+                                            Corrugated Roll - 4x 50 meter
+                                        </span>
+                                    </strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px">
+                                    <strong style="font-size: 0.8rem; padding: 12px 0px">
+                                        Company Name
+                                        <span
+                                            style="clear:both; display:block; font-weight: normal; text-transform: capitalize; font-size:1.0rem">
+                                            Jai Bharat Traders
+                                        </span>
+                                    </strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px">
+                                    <strong style="font-size: 0.8rem; padding: 12px 0px">
+                                        Deal Link
+                                        <span style="clear:both; display:block; font-weight: normal; font-size:1.0rem">
+                                            <a href="#">https://leadplus.bizongo.in/deal/982211</a>
+                                        </span>
+                                    </strong>
+                                </td>
+                            </tr>
+                            <tr style="border-top:none">
+                                <td style="padding: 12px; border-top:none">
+                                    <span style="clear:both; display:block; font-weight: normal">
+                                        <a align="center" href="#" role="button"
+                                            style="float: right; box-shadow: 0 2px 2px #F2F2F2; padding: 8px 12px; background-color: #0486FF; color: white; border-radius: 0.25rem; margin-bottom: 4px">Review
+                                            Product</a>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>

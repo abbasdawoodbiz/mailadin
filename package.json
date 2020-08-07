@@ -1,11 +1,21 @@
 {
-  "name": "email_templates",
+  "name": "mailadin",
   "version": "1.0.0",
   "description": "Generator for email templates",
-  "main": "index.js",
+  "main": "bin/index.js",
+  "bin": {
+    "mailadin": "./bin/index.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "node -e 'require(\"./bin/index\").main()'"
   },
   "author": "abbasdawood",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "boxen": "^4.0.0",
+    "chalk": "^2.4.2",
+    "lodash": "^4.17.19",
+    "yargs": "^13.2.4"
+  }
 }

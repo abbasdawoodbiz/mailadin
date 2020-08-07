@@ -1,0 +1,11 @@
+
+                <tr>
+                    <td style="padding: 12px 32px;">
+                        <span
+                            style="display: block; background-color: #f3f3f3; padding: 16px; font-size: 0.85rem; border-radius: 0.25rem; box-shadow: inset 0 1px 5px#F2F2F2;">
+                            <strong>⚠️ Heading</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+                            tempore incidunt, error, nemo accusamus quas quam ea perspiciatis repellat fugiat sed, in
+                            ducimus ipsum fuga eius cum inventore at blanditiis!
+                    </span>
+                    </td>
+                </tr>
