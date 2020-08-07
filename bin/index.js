@@ -39,7 +39,7 @@ let sections = {
 
 let defaults = {
     template: 'transactional',
-    body: 'text,table:horizontal,button'
+    body: 'text,button'
 }
 
 const options = yargs

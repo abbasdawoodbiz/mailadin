@@ -1,5 +1,4 @@
-## Mailadin
----
+# Mailadin
 A utility that allows to generate rich HTML based mail templates for transactional and marketing needs, based on preexisting partials. By using this generator, you would no longer need to handcraft your way using raw HTML, neither would you have to spend time designing inconsistent templates using a WYSIWYG editor. Best used for teams that need consistency in mail templates, but are finding it hard to achieve because of rapid distributed development.
 
 ### Setup
@@ -54,6 +53,13 @@ Options:
                   current working directory                             [string]
 
 ```
+
+### Examples
+#### Transactional mail with text, table and warning
+![Transactional Mail](img/example1.png)
+
+#### Marketing mail with text and button
+![Marketing Mail](img/example2.png)
 
 ### Contributing
 To contribute to this project, please contact the author [@abbasdawood](https://github.com/abbasdawood)
