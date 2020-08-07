@@ -62,4 +62,5 @@ Options:
 ![Marketing Mail](img/example2.png)
 
 ### Contributing
-To contribute to this project, please contact the author [@abbasdawood](https://github.com/abbasdawood)
+To contribute to this project, please contact the author [@abbasdawood](https://github.com/abbasdawood).
+Changelog is maintained [here](CHANGELOG.md)
