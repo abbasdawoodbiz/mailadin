@@ -56,10 +56,10 @@ Options:
 
 ### Examples
 #### Transactional mail with text, table and warning
-![Transactional Mail](img/example1.png)
+![Transactional Mail](img/example1.png =200x)
 
 #### Marketing mail with text and button
-![Marketing Mail](img/example2.png)
+![Marketing Mail](img/example2.png =200x)
 
 ### Contributing
 To contribute to this project, please contact the author [@abbasdawood](https://github.com/abbasdawood).
