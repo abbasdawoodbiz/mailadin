@@ -22,4 +22,5 @@ Thumbs.db
 *.sublime-workspace
 
 # Output
-email_output.html
+*.html
+*.zip
