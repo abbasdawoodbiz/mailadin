@@ -54,6 +54,9 @@ Options:
 
 ```
 
+#### Running locally
+To run locally, clone this repo and run the command `node . -t=<template_type>` from the console from the project directory
+
 ### Examples
 #### Transactional mail with text, table and warning
 <img src="img/example1.png" width="200">
