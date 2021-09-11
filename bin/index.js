@@ -29,6 +29,10 @@ let sections = {
         image_left: 'text_image_left',
         image_top: 'text_image_top'
     },
+    divider: {
+        line: 'divider',
+        no_line: 'divider_invisible'
+    },
     button: {
         center: 'button_block_center',
         left: 'button_block_left',
