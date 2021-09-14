@@ -4,6 +4,12 @@ let fs = require('fs');
 const yargs = require("yargs");
 const chalk = require('chalk');
 
+/** Internal Imports */
+const scaffold = require('./generator/scaffold');
+const button = require('./generator/button');
+const elements = require('./constants');
+
+
 let promises = []
 
 const boxenOptions = {
@@ -51,6 +57,7 @@ const options = yargs
     .option('t', { alias: 'template', describe: "Which template to use, one of marketing or transactional", type: 'string', demandOption: true })
     .option('b', { alias: 'body', describe: "Comma separated values from this list: text(:block|:warning|:image_left|:image_top),button(:left|:center|:right),table (:vertical|:horizontal).", type: 'string', demandOption: false })
     .option('p', { alias: 'path', describe: "Absolute path where the files have to be generated, default is current working directory", type: 'string', demandOption: false })
+    .option('n', { alias: 'name', describe: "Filename that you want, don't write the .html part. For e.g. if you want the output as myfile.html, enter myfile", type: 'string', demandOption: false })
     .argv;
 
 /**
@@ -66,11 +73,12 @@ function main() {
     customisation.template = options.template || defaults.template
     customisation.body = options.body || defaults.body
     customisation.cwd = options.path || '.'
+    customisation.fileName = options.name || 'email_output.html'
 
     createMarkup(customisation)
 }
 
-function createMarkup(options) {
+function createMarkup(options, subject, preheader) {
 
     let header = sections[options.template].header
     let footer = sections[options.template].footer
@@ -100,7 +108,7 @@ function createMarkup(options) {
 
     Promise.all(promises).then(data => {
         console.log(chalk.white.bold('✅ Finishing up..'));
-        writeTemplate(options.cwd, data.join('\n'), 'email_output', 'html')
+        writeTemplate(options.cwd, data.join('\n'), options.fileName, 'html')
     })
 }
 
@@ -128,8 +136,33 @@ fs.readFileAsync = (cwd, partialName) => {
     });
 }
 
+let mailadin = {};
+
+mailadin.prototype.value = '';
+
+mailadin.prototype.addSection = function (type, additionalOptions) {
+    let self = this;
+    switch (type) {
+        case elements.BUTTON:
+            self.value += button.generate(...additionalOptions)
+            break;
+        // TODO: Fill these n
+        case elements.TEXT: break;
+        case elements.TEXT: break;
+            case elements.TEXT: break;
+        default: console.log(chalk.white.bold('✅ No additional sections added ..')); break;
+    }
+
+};
+
+mailadin.prototype.generate = function (preheader) {
+    let self = this;
+    self.value = scaffold.generate(preheader,);
+}
+
 module.exports = {
-    main: main
+    main: main,
+    mailadin: mailadin
 }
 
 main();
