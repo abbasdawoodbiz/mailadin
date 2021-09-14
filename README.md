@@ -1,6 +1,8 @@
 # Mailadin
 A utility that allows to generate rich HTML based mail templates for transactional and marketing needs, based on preexisting partials. By using this generator, you would no longer need to handcraft your way using raw HTML, neither would you have to spend time designing inconsistent templates using a WYSIWYG editor. Best used for teams that need consistency in mail templates, but are finding it hard to achieve because of rapid distributed development.
 
+[![Gitter](https://badges.gitter.im/bizongoos/community.svg)](https://gitter.im/bizongoos/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 ### Setup
 - Install the package by using `npm i -g mailadin`
 - Open shell of choice, `mkdir test && cd _`
