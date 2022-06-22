@@ -4,6 +4,15 @@ let fs = require('fs');
 const yargs = require("yargs");
 const chalk = require('chalk');
 
+/** Internal Imports */
+const scaffold = require('./bin/generator/scaffold');
+const button = require('./bin/generator/button');
+const text = require('./bin/generator/text');
+const elements = require('./bin/constants');
+
+/** Initialise mailadin object for prototyping */
+let mailadin = {};
+
 let promises = []
 
 const boxenOptions = {
@@ -29,6 +38,10 @@ let sections = {
         image_left: 'text_image_left',
         image_top: 'text_image_top'
     },
+    divider: {
+        line: 'divider',
+        no_line: 'divider_invisible'
+    },
     button: {
         center: 'button_block_center',
         left: 'button_block_left',
@@ -37,36 +50,39 @@ let sections = {
     head: 'head'
 }
 
-let defaults = {
-    template: 'transactional',
-    body: 'text,button'
-}
+// mailadin.prototype.defaults = {
+//     template: 'transactional',
+//     body: 'text,button',
+//     name: 'email-output'
+// }
 
 const options = yargs
     .usage('Usage: -t <template type>')
-    .option('t', { alias: 'template', describe: "Which template to use, one of marketing or transactional", type: 'string', demandOption: true })
+    .option('t', { alias: 'template', describe: "Which template to use, one of marketing or transactional, default is transactional", type: 'string', demandOption: false })
     .option('b', { alias: 'body', describe: "Comma separated values from this list: text(:block|:warning|:image_left|:image_top),button(:left|:center|:right),table (:vertical|:horizontal).", type: 'string', demandOption: false })
     .option('p', { alias: 'path', describe: "Absolute path where the files have to be generated, default is current working directory", type: 'string', demandOption: false })
+    .option('n', { alias: 'name', describe: "Filename that you want, don't write the .html part. For e.g. if you want the output as myfile.html, enter myfile", type: 'string', demandOption: false })
     .argv;
 
 /**
  * Function to build the final template based on inputs given by devs
  */
 function main() {
-    let args = process.argv.slice(1)
-
-    console.log(chalk.green.bold('💡Rubbing the lamp..'));
+    console.log(chalk.green.bold('💡 Rubbing the lamp..'));
 
     let customisation = {}
 
-    customisation.template = options.template || defaults.template
-    customisation.body = options.body || defaults.body
-    customisation.cwd = options.path || '.'
+    // customisation.template = options.template || mailadin.defaults.template
+    // customisation.body = options.body || mailadin.defaults.body
+    // customisation.cwd = options.path || '.'
+    // customisation.fileName = options.name || mailadin.defaults.name
 
-    createMarkup(customisation)
+    // createMarkup(customisation);
+
+    console.log(mailadin.generate([button.button('Hi', 'https://google.com'), text.text('Something goes here')], 'Pre header').value);
 }
 
-function createMarkup(options) {
+function createMarkup(options, subject, preheader) {
 
     let header = sections[options.template].header
     let footer = sections[options.template].footer
@@ -81,6 +97,9 @@ function createMarkup(options) {
 
     console.log(chalk.white.bold('🍼 Adding body...'));
 
+    /**
+     * Sample in options body = text:block,button:block_center => [text:block, button:block_center] => [[text, block],[button, block_center]]
+     */
     _.forEach(options.body.split(','), partial => {
         let s = partial.split(':')
         if (s.length > 1) {
@@ -96,7 +115,7 @@ function createMarkup(options) {
 
     Promise.all(promises).then(data => {
         console.log(chalk.white.bold('✅ Finishing up..'));
-        writeTemplate(options.cwd, data.join('\n'), 'email_output', 'html')
+        writeTemplate(options.cwd, data.join('\n'), options.fileName, 'html')
     })
 }
 
@@ -124,8 +143,30 @@ fs.readFileAsync = (cwd, partialName) => {
     });
 }
 
+mailadin = {
+    value: '',
+    generate: (sections, preheader) => {
+        // console.log(sections, preheader)
+        let self = this;
+        let s = [];
+        if(!_.isArray(sections)) s.push(sections); else s = sections;
+    
+        _.each(s, (section, index) => {
+            if(_.isUndefined(self.value))
+                self.value = section;
+            else
+                self.value += section;
+        });
+
+        self.value = scaffold.generate(preheader, self.value);
+    
+        return self;
+    }
+}
+
 module.exports = {
+    mailadin: mailadin,
     main: main
 }
 
-main();
+// main();

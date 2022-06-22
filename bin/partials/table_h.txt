@@ -1,5 +1,5 @@
 <tr>
-                <td style="padding: 12px 32px;">
+                <td style="padding: 12px 32px;" colspan="2">
                     <table width="100%" border="1" style="border:1px solid #EDEFF3; border-radius: 0.25rem;"
                         align="center">
                         <thead
