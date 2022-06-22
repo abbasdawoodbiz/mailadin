@@ -5,6 +5,16 @@ const Elements = {
     TABLE: 'table'
 }
 
-Object.freeze(Elements);
+const Alignment = {
+    LEFT: 'left',
+    CENTER: 'center',
+    RIGHT: 'right'
+}
 
-module.exports.Elements = Elements;
+Object.freeze(Elements);
+Object.freeze(Alignment);
+
+module.exports = {
+    Elements,
+    Alignment
+};

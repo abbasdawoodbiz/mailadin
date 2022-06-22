@@ -1,6 +1,6 @@
-function generate(preheader, content){
+function generate(preheader, content, title){
     
-    return 
+    let s =  
     `<body style="background-color: #F8F8F8;">
         <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center"
         style="max-width: 620px; background-color: white; padding: 12px; border:1px solid #F2F2F2; border-radius: 0.25rem; margin: 32px auto 12px;">
@@ -20,7 +20,7 @@ function generate(preheader, content){
                 </tr>
                 <tr>
                     <td style="padding:4px 32px; border-bottom: 1px solid #dddddd;">
-                        <h2>Title of the mail</h2>
+                        <h2>${title}</h2>
                     </td>
                 </tr>
             ${content}
@@ -50,6 +50,8 @@ function generate(preheader, content){
         </table>
     </body>
     `;
+
+    return s;
 
 }
 

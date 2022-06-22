@@ -9,14 +9,23 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "generate": "node -e 'require(\"./bin/index\").main()'",
-    "commit": "cz" 
+    "commit": "cz"
   },
   "author": "Abbas Dawood <abbas11.it@gmail.com> (https://github.com/abbasdawood)",
-  "contributors": ["Ishan Purohit <ishanadvance@gmail.com>", "Yash Doshi <ydoshi91@gmail.com>", "Abhijit Sharma <abhijit.sharma@bizongo.com>"],
+  "contributors": [
+    "Ishan Purohit <ishanadvance@gmail.com>",
+    "Yash Doshi <ydoshi91@gmail.com>",
+    "Abhijit Sharma <abhijit.sharma@bizongo.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abbasdawoodbiz/mailadin"
+  },
   "license": "ISC",
   "dependencies": {
     "boxen": "^4.0.0",
     "chalk": "^2.4.2",
+    "html-validator": "^5.1.17",
     "lodash": "^4.17.19",
     "yargs": "^13.2.4"
   },
